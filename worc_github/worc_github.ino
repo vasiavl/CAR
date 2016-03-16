@@ -1,12 +1,12 @@
 
 
-int But1=0;
-int But2=0;   //20
+int But1=0; //меняем код 1-ый раз
+int But2=0;   
 int But3=0;
 int forwardR,forwardL,flag,flagP, flagForwardL, flagForwardR =0;//состояние реверса двигателей и флаги  переключения состояний
 
 void setup() {
-    pinMode(Button_1, INPUT_PULLUP);
+    pinMode(Button_1, INPUT_PULLUP); //меняем код 1-ый раз
     pinMode(Button_2, INPUT_PULLUP);
     pinMode(Button_3, INPUT_PULLUP);
     pinMode(forward_agoPinR, OUTPUT);
@@ -16,7 +16,7 @@ void setup() {
 }
 
 void loop() {                               
-  Yaw = analogRead(analogInYawPin); 
+  Yaw = analogRead(analogInYawPin);  //меняем код 1-ый раз
   Roll = analogRead(analogInRollPin); 
   Pitch = analogRead(analogInPitchPin);
   forwardR=  digitalRead(forward_agoPinR);
@@ -24,7 +24,7 @@ void loop() {
   tvistFlag= digitalRead( LRPin);
   
    
-  outputPitch = map(Pitch, 540, 1023, 0, 255); 
+  outputPitch = map(Pitch, 540, 1023, 0, 255);  //меняем код 1-ый раз
   outputPitchD = map(Pitch, 480, 0, 0, 255); 
   outputRoll =  map(Roll, 480, 0, 0, 255);
   outputRollR =  map(Roll, 540, 1023, 0, 255);
@@ -32,7 +32,7 @@ void loop() {
   outputYawR = map(Yaw, 480, 0, 0, 255);
                                                                                         
                                                                                                                                                               
-   if (460>Pitch)
+   if (460>Pitch) //меняем код 1-ый раз
    {       outputPitch= 0;
            if (HIGH==forwardR|| HIGH==forwardL)
               { flagForwardL =flagForwardR=flag= LOW;}
@@ -44,7 +44,7 @@ void loop() {
               if (outputPitchD>outputRollR)   R= (outputPitchD-outputRollR/1.5);
               if (outputPitchD<outputRollR)   R= 0;}
    }  
- if (Pitch > 560)
+ if (Pitch > 560) //меняем код 1-ый раз
   {             outputPitchD= 0;
           if (LOW==forwardR|| LOW==forwardL)
           { flagForwardR =flagForwardL=flag= HIGH ; }
@@ -57,7 +57,7 @@ void loop() {
              if (outputPitch>outputRollR)   R= (outputPitch-outputRollR/1.5);
              if (outputPitch<outputRollR)   R= 0; }
     }    
-    if ((560>Pitch)&& (Pitch >460))
+    if ((560>Pitch)&& (Pitch >460)) //меняем код 1-ый раз
     {       Rdriv=Ldriv=0;
             outputRoll =outputRollR =  0;  //R=L=outputPitchD =outputPitch =0;  
          if (   Yaw>540)//left
@@ -115,7 +115,7 @@ void loop() {
                                                          
  
  
-  Serial.print(" Yaw = " );                       
+  Serial.print(" Yaw = " );  //меняем код 1-ый раз                      
   Serial.print(Yaw);      
   Serial.print("\t outputYawR = ");      
   Serial.print(outputYawR); 
